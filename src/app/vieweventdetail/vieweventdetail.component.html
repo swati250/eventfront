@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 class="text-center">EventDetail Table</h2><br>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Name</th>
+               <th>Email Address</th>
+               <th>Event Date</th>
+               <th> Guest Count</th>
+                <th>tell us bout your event </th>
+                
+                <th> Location </th>
+        </tr>
+        </thead>
+
+       <tbody>
+        <tr *ngFor="let e of earr">
+            <td>{{e.id}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.evedate}}</td>
+            <td>{{e.guestcount}}</td>
+            <td>{{e.eventdesc}}</td>
+            
+            <td>{{e.location}}</td>
+            
+        </tr>
+           </tbody>
+    </table>
+</div>

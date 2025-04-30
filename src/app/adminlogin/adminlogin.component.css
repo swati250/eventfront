@@ -1,0 +1,28 @@
+.card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    
+
+}
+.button-container {
+display: flex;
+justify-content: left; /* Centers the buttons */
+gap: 15px; /* Creates space between buttons */
+margin-top: 10px; /* Adds space from the form fields */
+}
+
+button {
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+background-color: blue;
+color: white;
+cursor: pointer;
+}
+
+button:hover {
+background-color: darkblue;
+}
+
+

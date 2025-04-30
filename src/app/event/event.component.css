@@ -1,0 +1,67 @@
+ /* Fixed Navbar */
+ .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Space below navbar */
+.event-container {
+    margin-top: 100px;
+}
+
+/* Fixed "EVENTS" Header */
+.events-header {
+text-align: center;
+font-size: 50px;
+font-weight: bold;
+color: white;
+background: #343a40;
+padding: 15px 0;
+top: 56px;
+left: 0;
+width: 100%;
+z-index: 999;
+}
+
+.event-container {
+margin-top: 140px; /* Reduced margin */
+padding: 5px 0; /* Less padding */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px; /* Reduced margin */
+    padding: 5px; /* Less padding */
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Wedding Images Row */
+.event-section {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+
+.event-image {
+    max-width: 100%;
+    height: 220px; /* Increased size for better visibility */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.event-image:hover {
+    transform: scale(1.05);
+}

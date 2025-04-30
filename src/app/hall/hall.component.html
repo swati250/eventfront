@@ -1,0 +1,72 @@
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 shadow">
+            <h3 class="text-center">Add Halls</h3>
+            <form #fedForm="ngForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Hall Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="Your Name" [(ngModel)]="hall.hallname" required>
+                </div>
+               
+
+                <div class="form-group">
+                    <label for="eventType">location</label>
+                    <select class="form-control" id="location" name="location"   [(ngModel)]="hall.location" required><br>
+                      <option value="">Select location</option>
+                      <option value="yavateshwar">yavateshwar</option>
+                      <option value="shahupuri">shahupuri</option>
+                      <option value="karanje">karanje</option>
+                      <option value="kodoli">kodoli</option>
+                      <option value="saudapur">saudapur</option>
+                      <option value="koregaon">koregaon</option>
+                      <option value="medha">medha</option>
+                      <option value="kanher">kanher</option>
+                     
+                    </select>
+                  </div><br>
+
+                  
+
+                  <div class="form-group">
+                    <label for="contact no.">contact no</label>
+                  <input type="number" class="form-control" id="contact no" name="contact no"  [(ngModel)]="hall.contactno" required>
+                  </div>
+                  
+                <div class="mb-3">
+                    <label class="form-label">Guest count</label>
+                    <input type="number" class="form-control" name="gcount" placeholder="Enter number of guests"   [(ngModel)]="hall.guestcount" required>
+                </div>
+               
+
+
+                <div class="mb-3">
+                  <label for="investment" class="form-label">Overall Event Investment</label>
+                  <input type="number" class="form-control" id="investment" name="investment" placeholder="event investment"    [(ngModel)]="hall.invest" required>
+              </div>
+              
+
+
+                <div class="mb-3">
+                  <label class="form-label">Upload Hall Image</label>
+                  <input type="file" class="form-control" id="hallImage" required multiple value="select" 
+                  (change)="onFileSelected($event)" >
+              <div class="row">
+                <div *ngFor="let file of hall.hallImages;let i=index" class="col-sm-2">
+
+                       <span class ="close" (click)="removeImage(i)">x</span>
+                      <img [src]="file.url" alt="" width="100px" height="100px">
+                   </div>
+              </div>
+                </div>
+                
+                      <button type="submit"  class="btn btn-success" style="width: 100px;">Submit</button>
+                      
+                    
+                    
+            </form>
+
+    
+        </div>
+    </div>
+</div>
+

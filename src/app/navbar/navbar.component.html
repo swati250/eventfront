@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+      <img src="/logo1.jpg" alt="Logo" style="width:60px;" class="rounded-pill">
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="collapsibleNavbar" style="margin-right: 100px;" [ngSwitch]="usertype">
+        <ul class="navbar-nav ms-auto" *ngSwitchCase="'guest'">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/event">Events</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register">Sign Up</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>  
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/alogin">Admin Login</a>
+          </li>
+          </ul>
+        <ul class="navbar-nav ms-auto" *ngSwitchCase="'user'">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/event">Events</a>
+          </li>  
+         
+         
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/eventdetail">Event Detail</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/feedback">Feedback</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact">Contact Us</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" (click)="ulogout()">Logout</a>
+          </li>  
+         </ul>
+
+         <ul class="navbar-nav ms-auto" *ngSwitchCase="'admin'">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/hall"> Add Hall</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/viewfeedback">View Feedback</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/vreg">View Registration</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/viewedetail">View EventDetail</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" (click)="alogout()">Logout</a>
+          </li> 
+          
+        </ul>
+         
+      </div>
+     
+
+
+      
+             
+          </div>
+  </nav>
+  
+

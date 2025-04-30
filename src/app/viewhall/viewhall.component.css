@@ -1,0 +1,31 @@
+.hall-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 15px;
+    background-color: #fff;
+  }
+  
+  .hall-image {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .hall-info {
+    flex-grow: 1;
+  }
+  
+  .hall-info h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+  }
+  
+  .hall-info p {
+    margin: 4px 0;
+  }
+  

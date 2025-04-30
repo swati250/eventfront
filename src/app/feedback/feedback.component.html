@@ -1,0 +1,86 @@
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="col-md-6">
+        <div class="card p-4 shadow">
+            <h3 class="text-center">Feedback Form</h3>
+            <form #fedForm="ngForm"  (ngSubmit)="submitdata(fedForm)">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" #name="ngModel"   [(ngModel)]="f.name">
+                </div>
+                <div *ngIf="!name.valid" style="color:red;">
+                    <div *ngIf="name.errors?.['required']">
+                           name is required
+                    </div>
+                  <div *ngIf="name.errors?.['pattern']">
+                       Name can contain only alphabets
+                  </div>
+                        </div>
+               
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email </label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" #email="ngModel" ngModel required [(ngModel)]="f.email">
+                </div>
+                <div *ngIf="!email.valid" style="color:red;">
+                    <div *ngIf="email.errors?.['required']">
+                           email is required
+                    </div>
+                    <div *ngIf="email.errors?.['pattern']">
+                      emailid must be valid 
+                 </div>
+                        </div>
+          
+                <div class="mb-3">
+                    <label for="event" class="form-label">Event Attended</label>
+                    <input type="text" class="form-control" id="event" placeholder="Enter event name" name="eve" #eve="ngModel" ngModel required [(ngModel)]="f.eventattend"> 
+                </div>
+                <div *ngIf="!eve.valid" style="color:red;">
+                    <div *ngIf="eve.errors?.['required']">
+                           event attended is required
+                    </div>
+                    <div *ngIf="eve.errors?.['pattern']">
+                        event attended  must be valid 
+                 </div>
+                        </div>
+                <div class="mb-3">
+                    <label for="rating" class="form-label">Rate the Event</label>
+                    <select class="form-select" id="rating" name="rate" #rate="ngModel" ngModel required [(ngModel)]="f.rateevent">
+                        <option selected>Choose...</option>
+                        <option value="poor">Poor</option>
+                        <option value="fair">Fair</option>
+                        <option value="Good">Good</option>
+                        <option value="Very Good">Very Good</option>
+                        <option value="Excellent">Excellent</option>
+                    </select>
+                </div>
+                <div *ngIf="!rate.valid" style="color:red;">
+                    <div *ngIf="rate.errors?.['required']">
+                           rating  is required
+                    </div>
+                    <div *ngIf="rate.errors?.['pattern']">
+                        rating  must be valid 
+                 </div>
+                        </div>
+                <div class="mb-3">
+                    <label for="comments" class="form-label">Additional Comments</label>
+                    <textarea class="form-control" id="comments" rows="3" placeholder="Your feedback" name="Addcm" #Addcm="ngModel" ngModel required [(ngModel)]="f.addcomment">
+
+                    </textarea>
+                </div>
+                <div *ngIf="!Addcm.valid" style="color:red;">
+                    <div *ngIf="Addcm.errors?.['required']">
+                           comment  is required
+                    </div>
+                    <div *ngIf="Addcm.errors?.['pattern']">
+                        comment  must be valid 
+                 </div>
+                        </div>
+                <div class="d-grid">
+                    <button type="submit" class=" btn btn-primary" [disabled]="!fedForm.valid" style="width: 100px;">Submit</button>
+                </div>
+            </form>
+    
+        </div>
+    </div>
+</div>
+  
+

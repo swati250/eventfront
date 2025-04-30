@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="text-center">Feedback Table</h2><br>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr><th> Id </th>
+                <th> Name</th>
+                <th>Email Address</th>
+                <th>Event Attended</th>
+                <th>Rate the Event</th>
+                <th>Comments</th>
+
+            </tr>
+        </thead>
+
+       <tbody>
+        <tr *ngFor="let f of farr">
+            <td>{{f.id}}</td>
+            <td>{{f.name}}</td>
+            <td>{{f.email}}</td>
+            <td>{{f.eventattend}}</td>
+            <td>{{f.rateevent}}</td>
+            <td>{{f.addcomment}}</td>
+        </tr>
+           </tbody>
+    </table>
+</div>

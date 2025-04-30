@@ -1,0 +1,83 @@
+<div class="bg">
+
+<div class="container mt-5 d-flex justify-content-center">
+<div class="col-md-6">
+    <div class="card p-4 shadow">
+        <h3 class="text-center">Registration Form</h3>
+        <form #regForm="ngForm"   (ngSubmit)="submitdata(regForm)">
+            <div class="mb-3">
+              <label for="name">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" #name="ngModel"   [(ngModel)]="r.name" required>
+      </div>
+      <div *ngIf="!name.valid" style="color:red;">
+        <div *ngIf="name.errors?.['required']">
+               name is required
+        </div>
+      <div *ngIf="name.errors?.['pattern']">
+           Name can contain only alphabets
+      </div>
+            </div>
+            <div class="mb-3">
+              <label for="add address">address</label>
+              <input type="text" class="form-control" id="add address" name="address"#address="ngModel" ngModel required [(ngModel)]="r.address" required>
+            </div>
+              <div *ngIf="!address.valid" style="color:red;">
+                <div *ngIf="address.errors?.['required']">
+                       address is required
+                </div>
+                <div *ngIf="address.errors?.['pattern']">
+                  address can contain only alphabets
+             </div>
+                    </div>
+            
+            <div class="mb-3">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" #email="ngModel" ngModel required [(ngModel)]="r.email">
+            </div>
+            <div *ngIf="!email.valid" style="color:red;">
+              <div *ngIf="email.errors?.['required']">
+                     email is required
+              </div>
+              <div *ngIf="email.errors?.['pattern']">
+                emailid must be valid 
+           </div>
+                  </div>
+    
+            <div class="mb-3">
+              <label for="contact no.">contact no</label>
+              <input type="number" class="form-control" id="contact no" name="contact" #contact="ngModel" ngModel required pattern="[6-9][0-9]{9}" [(ngModel)]="r.contactno">
+
+            </div>
+            <div *ngIf="!contact.valid" style="color:red;">
+              <div *ngIf="contact.errors?.['required']">
+                     contact is required
+              </div>
+              <div *ngIf="contact.errors?.['pattern']">
+                contact can contain only numbers
+           </div>
+                  </div>
+          
+            <div class="mb-3">
+              <label for="pwd" class="form-label">Password:</label>
+              <input type="password" class="form-control" id="pswd" placeholder="Enter password" name="pswd" #pswd="ngModel" ngModel required pattern="^[A-Za-z0-9!@#$%]{8,12}$" [(ngModel)]="r.password">
+      
+            </div>
+            <div *ngIf="!pswd.valid" style="color:red;">
+              <div *ngIf="pswd.errors?.['required']">
+                     password is required
+              </div>
+            </div>
+           <div class="d-grid">
+            <button type="submit" [disabled]="!regForm.valid" class="btn btn-primary" style="width: 100px;">Submit</button>
+        </div>   
+         
+         
+      </form>
+         
+</div>  
+
+</div>
+</div>
+
+
+

@@ -1,0 +1,107 @@
+
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="col-md-6">
+      <div class="card p-4 shadow">
+          <h3 class="text-center"><strong>Event Detail</strong></h3>
+          <form #eveForm="ngForm" (ngSubmit)="submitdata(eveForm)">
+              <div class="mb-3">
+                  <label for="eventName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="eventName" placeholder="name" name="name" #name="ngModel"  [(ngModel)]="e.name" required>
+              </div>
+              <div *ngIf="!name.valid" style="color:red;">
+                <div *ngIf="name.errors?.['required']">
+                       name is required
+                </div>
+              <div *ngIf="name.errors?.['pattern']">
+                   Name can contain only alphabets
+              </div>
+                    </div>
+                    
+              <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="email" placeholder="email address" name="email" #email="ngModel" ngModel required   [(ngModel)]="e. email">
+              </div>
+
+              <div *ngIf="!email.valid" style="color:red;">
+                <div *ngIf="email.errors?.['required']">
+                       email is required
+                </div>
+                <div *ngIf="email.errors?.['pattern']">
+                  emailid must be valid 
+             </div>
+                    </div>
+      
+              <div class="mb-3">
+                  <label for="eventDate" class="form-label">Event Date</label>
+                  <input type="date" class="form-control" id="eventDate" name="eventDate" #eventDate="ngModel" ngModel    [(ngModel)]="e.evedate" required>
+              </div>
+              <div *ngIf="!eventDate.valid" style="color:red;">
+                <div *ngIf="eventDate.errors?.['required']">
+                       date is required
+                </div>
+                <div *ngIf="eventDate.errors?.['pattern']">
+                  date must be valid 
+             </div>
+                    </div>
+              <div class="mb-3">
+                  <label for="guest" class="form-label">Guest Count</label>
+                  <input type="number" class="form-control" id="guest" name="guest" placeholder="guest count" #guest="ngModel" ngModel   [(ngModel)]="e.guestcount" required>
+              </div>
+              <div *ngIf="!guest.valid" style="color:red;">
+                <div *ngIf="guest.errors?.['required']">
+                       count is required
+                </div>
+                <div *ngIf="guest.errors?.['pattern']">
+                  count must be valid 
+             </div>
+                    </div>
+              <div class="mb-3">
+                  <label for="eventDescription" class="form-label">Tell us about your event</label>
+                  <textarea class="form-control" id="eventDescription" rows="3" placeholder="Enter event description" name="eventdesc" #eventdesc="ngModel" ngModel required   [(ngModel)]="e.eventdesc">
+
+                  </textarea>
+              </div>
+              <div *ngIf="!eventdesc.valid" style="color:red;">
+                <div *ngIf="eventdesc.errors?.['required']">
+                       description is required
+                </div>
+                <div *ngIf="eventdesc.errors?.['pattern']">
+                  description must be valid 
+             </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="location" class="form-label">Location</label>
+                      <select class="form-control" id="location" name="location"  #location="ngModel" ngModel required [(ngModel)]="e.location">
+                          <option value="">Select location</option>
+                          <option value="yavateshwar">Yavateshwar</option>
+                          <option value="shahupuri">Shahupuri</option>
+                          <option value="karanje">Karanje</option>
+                          <option value="kodoli">Kodoli</option>
+                          <option value="saudapur">Saudapur</option>
+                          <option value="koregaon">Koregaon</option>
+                          <option value="medha">Medha</option>
+                          <option value="kanher">Kanher</option>
+                      </select>
+                  </div>
+                  <div *ngIf="!location.valid" style="color:red;">
+                    <div *ngIf="location.errors?.['required']">
+                           location is required
+                    </div>
+                    <div *ngIf="location.errors?.['pattern']">
+                        location must be valid 
+                 </div>
+    </div>
+    
+
+              <div class="d-grid">
+                  <button type="submit" [disabled]="!eveForm.valid" class="btn btn-primary" style="width: 100px;">Submit</button>
+              </div>
+
+             
+
+          </form>
+      </div>
+  </div>
+</div>
+
