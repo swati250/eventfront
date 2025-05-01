@@ -1,4 +1,4 @@
-<div class="hall-grid">
+<div class="hall-container">
   
   <div *ngFor="let h of hall" class="hall-card">
       <img
@@ -6,7 +6,7 @@
         [src]="'http://localhost:9002/project/downloadFile/' + h.hallImages[0].name"
         alt="Hall Image"
       />
-      <div class="hall-info">
+      <div class="hall-details">
       <h3>hallname: {{h.hallname}}</h3>
       <h4>location: {{h.location}}</h4>
       <h4>contact no: {{h.contactno}}</h4>
